@@ -5,10 +5,29 @@ import streamlit as st
 import asyncio
 import sys
 import os
+from pathlib import Path
 
-# Add the src directory to the path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from archive.scraper import ArchiveScraper
+# Setup path for imports
+def setup_imports():
+    """Setup Python path for proper imports."""
+    current_file = Path(__file__).resolve()
+    src_dir = current_file.parent.parent  # Go up from ui/ to src/
+    project_root = src_dir.parent  # Go up from src/ to project root
+    config_dir = project_root / 'config'
+    
+    for path in [str(src_dir), str(config_dir), str(project_root)]:
+        if path not in sys.path:
+            sys.path.insert(0, path)
+
+# Setup imports
+setup_imports()
+
+try:
+    from archive.scraper import ArchiveScraper
+except ImportError as e:
+    st.error(f"Import Error: {e}")
+    st.error("Please make sure the project structure is correct and dependencies are installed.")
+    st.stop()
 
 
 def main():
