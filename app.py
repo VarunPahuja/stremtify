@@ -39,8 +39,9 @@ def check_environment():
     env_example = Path('.env.example')
     
     if not env_file.exists() and env_example.exists():
-        st.warning("⚠️ .env file not found. Please copy .env.example to .env and configure your Spotify API credentials.")
-        st.info("💡 Tip: Run `python setup.py` for automated setup.")
+        st.info("ℹ️ For full functionality, copy .env.example to .env and configure your Spotify API credentials.")
+        st.info("💡 You can still use the Archive.org scraper without Spotify credentials.")
+        st.info("🔧 Run `python setup.py` for automated setup.")
         return False
     return True
 
