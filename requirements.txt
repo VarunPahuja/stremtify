@@ -1,0 +1,6 @@
+streamlit==1.47.1
+spotipy==2.25.1
+aiohttp==3.12.13
+python-dotenv==1.1.0
+tqdm==4.67.1
+selenium==4.33.0
