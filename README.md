@@ -29,15 +29,42 @@ stremtify/
 
 ## Installation
 
+### Quick Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/stremtify.git
+   cd stremtify
+   ```
+
+2. Run the setup script:
+   ```bash
+   python setup.py
+   ```
+
+3. Edit `.env` file with your Spotify API credentials
+
+4. Run the app:
+   ```bash
+   streamlit run app.py
+   ```
+
+### Manual Setup
 1. Clone the repository
-2. Install dependencies:
+2. Create virtual environment:
+   ```bash
+   python -m venv .venv
+   ```
+3. Activate virtual environment:
+   - Windows: `.venv\Scripts\activate`
+   - Unix/Mac: `source .venv/bin/activate`
+4. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Copy `.env.example` to `.env` and fill in your Spotify API credentials
-4. Run the Streamlit app:
+5. Copy `.env.example` to `.env` and fill in your Spotify API credentials
+6. Run the Streamlit app:
    ```bash
-   streamlit run src/ui/streamlit_app.py
+   streamlit run app.py
    ```
 
 ## Usage
