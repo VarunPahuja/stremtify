@@ -69,8 +69,20 @@ stremtify/
 
 ## Usage
 
-### Web Interface
-Run the Streamlit app for a user-friendly interface:
+### Web Interface (Recommended)
+Choose one of these methods to run the Streamlit app:
+
+**Method 1 - Simple Runner:**
+```bash
+python run.py
+```
+
+**Method 2 - Main App:**
+```bash
+streamlit run app.py
+```
+
+**Method 3 - Direct:**
 ```bash
 streamlit run src/ui/streamlit_app.py
 ```
